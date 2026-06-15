@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог продукции | Vaiur-Plast MD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <a href="index.html"><img class="site-logo" src="image/Group 3.svg" alt="Vaiur-Plast"></a>
+      </div>
+      <nav>
+        <a href="okna.html">Окна</a>
+        <a href="dveri.html">Двери</a>
+        <a href="balkony.html">Балконы</a>
+        <a href="ceny.html">Цены</a>
+        <a href="index.html">Главная</a>
+      </nav>
+      <div class="header-actions">
+        <div style="text-align:right">
+          <div class="phone">079-036-904</div>
+          <div class="hours">Пн-Пт: 09:00–17:00</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">КАТАЛОГ</div>
+        <h2 class="section-title">Каталог продукции</h2>
+        <p class="section-sub">Фотографии недавно добавленных образцов и материалов. Нажмите на изображение, чтобы открыть в полном размере.</p>
+      </div>
+
+      <div class="catalog-grid">
+
+        <figure class="catalog-item">
+          <a href="image/vekaCollection.jpg" class="lightbox-link"><img src="image/vekaCollection.jpg" alt="Veka Collection" loading="lazy"></a>
+          <figcaption>Veka Collection — премиум профиль</figcaption>
+        </figure>
+
+        <!-- Оставшиеся корректные изображения -->
+        <figure class="catalog-item">
+          <a href="image/5296533191483137425.jpg" class="lightbox-link"><img src="image/5296533191483137425.jpg" alt="Образец 5296533...25" loading="lazy"></a>
+        </figure>
+
+        <figure class="catalog-item">
+          <a href="image/5296533191483137426.jpg" class="lightbox-link"><img src="image/5296533191483137426.jpg" alt="Образец 5296533...26" loading="lazy"></a>
+        </figure>
+
+        <figure class="catalog-item">
+          <a href="image/5296533191483137427.jpg" class="lightbox-link"><img src="image/5296533191483137427.jpg" alt="Образец 5296533...27" loading="lazy"></a>
+        </figure>
+
+        <figure class="catalog-item">
+          <a href="image/5296533191483137428.jpg" class="lightbox-link"><img src="image/5296533191483137428.jpg" alt="Образец 5296533...28" loading="lazy"></a>
+        </figure>
+
+        <figure class="catalog-item">
+          <a href="image/5296533191483137429.jpg" class="lightbox-link"><img src="image/5296533191483137429.jpg" alt="Образец 5296533...29" loading="lazy"></a>
+        </figure>
+
+        <figure class="catalog-item">
+          <a href="image/5296533191483137430.jpg" class="lightbox-link"><img src="image/5296533191483137430.jpg" alt="Образец 5296533...30" loading="lazy"></a>
+        </figure>
+
+        <figure class="catalog-item">
+          <a href="image/5296533191483137431.jpg" class="lightbox-link"><img src="image/5296533191483137431.jpg" alt="Образец 31" loading="lazy"></a>
+        </figure>
+
+        <figure class="catalog-item">
+          <a href="image/5296533191483137432.jpg" class="lightbox-link"><img src="image/5296533191483137432.jpg" alt="Образец 32" loading="lazy"></a>
+        </figure>
+
+      </div>
+
+      <!-- Lightbox overlay -->
+      <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+        <button class="lb-close" aria-label="Закрыть">✕</button>
+        <img class="lb-image" src="" alt="">
+        <div class="lb-caption"></div>
+      </div>
+
+      <script>
+        // Lightbox: простой скрипт
+        (function(){
+          const links = document.querySelectorAll('.lightbox-link');
+          const overlay = document.getElementById('lightbox');
+          const lbImage = overlay.querySelector('.lb-image');
+          const lbCaption = overlay.querySelector('.lb-caption');
+          const lbClose = overlay.querySelector('.lb-close');
+
+          links.forEach(link => {
+            link.addEventListener('click', function(e){
+              e.preventDefault();
+              const src = this.getAttribute('href');
+              const alt = this.querySelector('img')?.alt || '';
+              lbImage.src = src;
+              lbImage.alt = alt;
+              lbCaption.textContent = alt;
+              overlay.classList.add('open');
+              overlay.setAttribute('aria-hidden','false');
+            });
+          });
+
+          function closeLb(){
+            overlay.classList.remove('open');
+            overlay.setAttribute('aria-hidden','true');
+            lbImage.src = '';
+          }
+
+          lbClose.addEventListener('click', closeLb);
+          overlay.addEventListener('click', function(e){ if(e.target===overlay) closeLb(); });
+          document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLb(); });
+        })();
+      </script>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Vaiur<span>-Plast</span></div>
+          <p class="footer-desc">Производитель пластиковых окон и дверей ПВХ в Молдове. Профили VEKA, монтаж под ключ с гарантией.</p>
+          <div class="footer-contact">
+            <a href="tel:079036904">📞 079-036-904</a>
+            <a href="mailto:milkapan@mail.ru">✉️ milkapan@mail.ru</a>
+            <a href="mailto:prorab_ivan@mail.ru">✉️ prorab_ivan@mail.ru</a>
+            <span>📍 ул. Вокзальная 65, Taraclia, Молдова</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Продукция</h4>
+          <ul class="footer-links">
+            <li><a href="okna.html">Окна ПВХ</a></li>
+            <li><a href="dveri.html">Двери</a></li>
+            <li><a href="balkony.html">Балконы</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Услуги</h4>
+          <ul class="footer-links">
+            <li><a href="remont.html">Ремонт окон</a></li>
+            <li><a href="dizayn.html">Дизайн окна</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Компания</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="news.html">Новости</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Vaiur-Plast MD. Все права защищены.</span>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">f</a>
+          <a href="#" class="social-btn">in</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
