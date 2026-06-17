@@ -35,7 +35,7 @@
 
       <div class="page-hero">
         <div class="hero-image">
-          <img class="img-cover" src="vekaCollection.jpg" alt="Цены">
+          <img class="img-cover" src="image/vekaCollection.jpg" alt="Цены">
         </div>
         <div>
           <h2>Как формируется цена</h2>
